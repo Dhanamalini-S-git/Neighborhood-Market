@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'leaflet/dist/leaflet.css';
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-nm-off-white text-nm-text-dark antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-nm-primary text-white font-medium rounded-xl shadow-soft hover:shadow-premium hover:-translate-y-0.5 transition-all duration-200 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-nm-text-dark font-medium rounded-xl shadow-sm border border-gray-100 hover:shadow-soft hover:bg-gray-50 transition-all duration-200 active:translate-y-0;
+  }
+  .btn-icon {
+    @apply p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 text-nm-text-light hover:text-nm-text-dark;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-50 overflow-hidden;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-nm-primary/20 focus:border-nm-primary outline-none transition-all duration-200 text-nm-text-dark placeholder:text-gray-400;
+  }
+  .badge {
+    @apply px-2.5 py-1 text-xs font-medium rounded-full;
+  }
+  .badge-green {
+    @apply bg-nm-soft-green text-nm-primary-dark;
+  }
+  .badge-yellow {
+    @apply bg-nm-yellow/40 text-yellow-800;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
